@@ -1,9 +1,38 @@
+"use client"
+
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { slideUp, staggerChildren } from "@/utils/motion-utils"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { ExternalLink } from "lucide-react"
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.8 } }
+}
+
+const staggerChildren = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+}
+
+const slideUp = {
+  hidden: { y: 30, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 80,
+      damping: 15
+    }
+  }
+}
 
 function ProjectCard({ title, description, image, liveLink, techStack }: {
   title: string;
@@ -13,28 +42,32 @@ function ProjectCard({ title, description, image, liveLink, techStack }: {
   techStack: string[];
 }) {
   return (
-    <motion.div variants={slideUp}>
-      <Card className="w-full max-w-sm">
-        <CardContent className="p-4">
-          <Image
-            src={image}
-            alt={`${title} thumbnail`}
-            width={400}
-            height={200}
-            className="w-full h-48 object-cover rounded-md mb-4"
-          />
-          <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">{title}</h3>
-          <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">{description}</p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {techStack && techStack.map((tech) => (
-              <span key={tech} className="text-xs bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded-full">
-                {tech}
-              </span>
-            ))}
+    <motion.div variants={slideUp} whileHover={{ y: -5 }} className="h-full">
+      <Card className="w-full h-full overflow-hidden bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+        <CardContent className="p-6 flex-1">
+          <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
+            <Image
+              src={image}
+              alt={`${title} thumbnail`}
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">{description}</p>
+            <div className="flex flex-wrap gap-2">
+              {techStack && techStack.map((tech) => (
+                <span key={tech} className="text-xs bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full">
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
         </CardContent>
-        <CardFooter>
-          <Button asChild className="w-full">
+        <CardFooter className="bg-gray-50 dark:bg-gray-800 p-6 mt-auto">
+          <Button asChild variant="outline" className="w-full hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
             <a href={liveLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
               Live Preview
               <ExternalLink className="w-4 h-4 ml-2" />
@@ -46,7 +79,7 @@ function ProjectCard({ title, description, image, liveLink, techStack }: {
   )
 }
 
-function ProjectsSection() {
+export default function ProjectsSection() {
   const projects = [
     {
       title: "Chat io",
@@ -75,14 +108,17 @@ function ProjectsSection() {
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "-100px" }}
       variants={staggerChildren}
       id="projects"
-      className="py-16 bg-white dark:bg-gray-900 transition-colors duration-500"
+      className="py-24 bg-gray-100 dark:bg-gray-900 transition-colors duration-500 relative overflow-hidden"
     >
-      <div className="container mx-auto px-4">
-        <motion.h2 variants={slideUp} className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-100">My Projects</motion.h2>
-        <motion.div variants={staggerChildren} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      <div className="absolute inset-0 bg-grid-gray-900/[0.04] dark:bg-grid-gray-100/[0.03] bg-[size:20px_20px]" />
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.h2 variants={fadeIn} className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-100">
+          My Projects
+        </motion.h2>
+        <motion.div variants={staggerChildren} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects && projects.map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
@@ -91,5 +127,3 @@ function ProjectsSection() {
     </motion.section>
   )
 }
-
-export default ProjectsSection

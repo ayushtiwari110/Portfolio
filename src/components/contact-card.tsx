@@ -27,9 +27,9 @@ const ProfileBadge = ({ icon: Icon, label, link, logo, isHoverCard = false, hack
       whileHover={{ scale: 1.02, y: -1 }}
       whileTap={{ scale: 0.98 }}
     >
-      {Icon && <Icon className="w-4 h-4 mr-1.5 opacity-80" />}
-      {logo && <Image src={logo} alt={label} width={16} height={16} className="mr-1.5 opacity-90" />}
-      <span className="text-sm font-medium">{label}</span>
+      {Icon && <Icon className="w-4 h-4 mr-1.5 opacity-80 flex-shrink-0" />}
+      {logo && <Image src={logo} alt={label} width={16} height={16} className="mr-1.5 opacity-90 flex-shrink-0" />}
+      <span className="text-sm font-medium truncate">{label}</span>
     </motion.div>
   );
 
@@ -39,7 +39,10 @@ const ProfileBadge = ({ icon: Icon, label, link, logo, isHoverCard = false, hack
         <HoverCardTrigger asChild>
           {BadgeContent}
         </HoverCardTrigger>
-        <HoverCardContent align="start" className="w-72 p-2 bg-gray-900 rounded-xl">
+        <HoverCardContent 
+          align="start" 
+          className="w-72 p-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg"
+        >
           <div className="space-y-4">
             <h4 className="text-lg text-center font-semibold text-gray-900 dark:text-gray-100">Hackathons</h4>
             <div className="space-y-3">
@@ -78,9 +81,9 @@ const ProfileBadge = ({ icon: Icon, label, link, logo, isHoverCard = false, hack
       whileHover={{ scale: 1.02, y: -1 }}
       whileTap={{ scale: 0.98 }}
     >
-      {Icon && <Icon className="w-4 h-4 mr-1.5 opacity-80" />}
-      {logo && <Image src={logo} alt={label} width={16} height={16} className="mr-1.5 opacity-90" />}
-      <span className="text-sm font-medium">{label}</span>
+      {Icon && <Icon className="w-4 h-4 mr-1.5 opacity-80 flex-shrink-0" />}
+      {logo && <Image src={logo} alt={label} width={16} height={16} className="mr-1.5 opacity-90 flex-shrink-0" />}
+      <span className="text-sm font-medium truncate">{label}</span>
     </motion.a>
   );
 };
@@ -95,9 +98,9 @@ const ContactItem = ({ icon: Icon, logo, content, link }: { icon?: React.Element
       className={`flex items-center space-x-2 py-1 ${link ? 'hover:text-primary cursor-pointer' : ''}`}
       whileHover={{ x: 2 }}
     >
-      {Icon && <Icon className="w-4 h-4 text-primary/70" />}
-      {logo && <Image src={logo} alt={logo} width={16} height={16} className="rounded-full" />}
-      <span className="text-sm text-gray-700 dark:text-gray-300">{content}</span>
+      {Icon && <Icon className="w-4 h-4 text-primary/70 flex-shrink-0" />}
+      {logo && <Image src={logo} alt={logo} width={16} height={16} className="rounded-full flex-shrink-0" />}
+      <span className="text-xs text-gray-700 dark:text-gray-300 truncate">{content}</span>
     </Wrapper>
   )
 }
@@ -166,15 +169,15 @@ const ContactCard = () => {
       initial="hidden"
       animate="visible"
       variants={fadeIn}
-      className="w-full max-w-5xl mx-auto"
+      className="w-full max-w-5xl mx-auto px-4 sm:px-6"
     >
       <Card className="shadow-xl dark:bg-gray-800 border dark:border-0">
-        <CardContent className="p-6">
+        <CardContent className="p-4 sm:p-6">
           <div className="flex flex-col gap-6">
             {/* Header Section */}
-            <div className="flex items-center gap-6">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
               <motion.div
-                className="relative w-24 h-24"
+                className="relative w-20 h-20 sm:w-24 sm:h-24"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -185,15 +188,15 @@ const ContactCard = () => {
                     alt="Developer's profile picture"
                     fill
                     className="object-cover"
-                    sizes="(max-width: 96px) 100vw, 96px"
+                    sizes="(max-width: 768px) 80px, 96px"
                   />
                 </div>
               </motion.div>
 
-              <div className="flex-1">
+              <div className="flex-1 text-center sm:text-left">
                 <motion.h2
                   variants={slideUp}
-                  className="text-2xl font-bold mb-1 text-gray-900 dark:text-gray-100"
+                  className="text-xl sm:text-2xl font-bold mb-1 text-gray-900 dark:text-gray-100"
                 >
                   Ayush Tiwari
                 </motion.h2>
@@ -203,14 +206,14 @@ const ContactCard = () => {
                 >
                   Software Developer | Machine Learning | GenAI
                 </motion.p>
-                <motion.div variants={slideUp} className="flex flex-wrap gap-2">
+                <motion.div variants={slideUp} className="flex flex-wrap justify-center sm:justify-start gap-2">
                   {stats.map((stat, index) => (
                     <Badge
                       key={index}
                       variant="secondary"
                       className="flex items-center gap-1 px-2 py-1 bg-primary/5 text-primary hover:bg-primary/10 transition-colors duration-200"
                     >
-                      <stat.icon className="w-3 h-3" />
+                      <stat.icon className="w-3 h-3 flex-shrink-0" />
                       {stat.label}
                     </Badge>
                   ))}
@@ -219,7 +222,7 @@ const ContactCard = () => {
             </div>
 
             {/* Contact Info Section */}
-            <div className="grid grid-cols-2 gap-x-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 sm:gap-x-8">
               <motion.div variants={slideUp} className="space-y-1">
                 {socialLinks.slice(0, 2).map((item, index) => (
                   <ContactItem
@@ -244,13 +247,13 @@ const ContactCard = () => {
             </div>
 
             {/* Skills Section */}
-            <motion.div variants={slideUp} className="flex flex-wrap gap-1.5">
+            <motion.div variants={slideUp} className="flex flex-wrap justify-center sm:justify-start gap-1.5">
               {skills.map((skill, index) => (
                 <SkillBadge key={index} label={skill} />
               ))}
             </motion.div>
 
-            {/* Achievements Section - Full Width */}
+            {/* Achievements Section */}
             <motion.div variants={slideUp} className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
               {achievements.map((achievement, index) => (
                 <ProfileBadge

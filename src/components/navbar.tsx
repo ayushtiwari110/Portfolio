@@ -19,7 +19,7 @@ function Navbar() {
       initial="hidden"
       animate="visible"
       variants={fadeIn}
-      className="sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-md"
+      className="sticky top-0 bg-white dark:bg-gray-800 shadow-md z-50"
     >
       <div className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">

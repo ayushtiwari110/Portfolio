@@ -9,7 +9,7 @@ function TechStackItem({ icon: Icon, name }: { icon: React.ElementType; name: st
       className="flex items-center space-x-2 bg-gray-200 dark:bg-gray-700 rounded-full px-4 py-2"
     >
       <Icon className="w-5 h-5 text-primary" />
-      <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{name}</span>
+      <span className="text-xs font-bold text-gray-800 dark:text-gray-200">{name}</span>
     </motion.div>
   )
 }
@@ -56,7 +56,7 @@ function TechStackSection() {
     >
       <div className="container mx-auto px-4">
         <motion.h2 variants={slideUp} className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-100">My Tech Stack</motion.h2>
-        <motion.div variants={staggerChildren} className="flex flex-wrap justify-center gap-4">
+        <motion.div variants={staggerChildren} className="flex flex-wrap justify-center gap-3">
           {techStack && techStack.map((tech) => (
             <TechStackItem key={tech.name} icon={tech.icon} name={tech.name} />
           ))}

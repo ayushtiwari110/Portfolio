@@ -11,6 +11,7 @@ import TechStackSection from './tech-stack'
 import ProjectsSection from './projects'
 import ExperienceSection from './experience'
 import ContactSection from './contact'
+import MyJourney from './my-journey'
 
 export default function Portfolio() {
 
@@ -26,20 +27,21 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="bg-white dark:bg-gray-900 min-h-screen">
+    <div className="bg-white dark:bg-gray-900 min-h-screen font-sans">
       <Navbar />
       <IntroSection />
       <TechStackSection />
       <AboutMe />
       <ProjectsSection />
       <ExperienceSection />
+      <MyJourney />
       <ContactSection />
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-        className="fixed bottom-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors duration-200"
+        className="fixed bottom-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors duration-200 z-50"
         aria-label="Toggle theme"
       >
         {theme === 'dark' ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
