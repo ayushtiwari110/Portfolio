@@ -12,6 +12,7 @@ import ProjectsSection from './projects'
 import ExperienceSection from './experience'
 import ContactSection from './contact'
 import MyJourney from './my-journey'
+import WhyHireMe from './why-hire-me'
 
 export default function Portfolio() {
 
@@ -35,6 +36,7 @@ export default function Portfolio() {
       <ProjectsSection />
       <ExperienceSection />
       <MyJourney />
+      <WhyHireMe />
       <ContactSection />
       <motion.button
         initial={{ opacity: 0 }}
