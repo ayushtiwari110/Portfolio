@@ -1,6 +1,5 @@
 import { motion } from "framer-motion"
-import { slideUp, staggerChildren } from "@/utils/motion-utils"
-import Image from "next/image";
+import { staggerChildren } from "@/utils/motion-utils"
 import { Timeline } from "./ui/timeline";
 
 function MyJourney() {
