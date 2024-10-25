@@ -17,6 +17,15 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Ayush Tiwari's Portfolio",
   description: "Ayush Tiwari's developer portfolio. A collection of projects, my journey, and more.",
+  openGraph: {
+    type: "website",
+    url: "https://ayush-tiwari.me",
+    title: "Ayush Tiwari's Portfolio",
+    description: "Ayush Tiwari's developer portfolio. A collection of his projects, journey, and more.",
+    images: [{
+      url: "https://github.com/user-attachments/assets/3a998c76-a08c-4052-855a-8c3edd68a1b3",
+    }],
+  }
 };
 
 export default function RootLayout({
