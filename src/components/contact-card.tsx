@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 import { GitHubDarkIcon, LinkedInIcon } from 'developer-icons';
-import { Mail, MapPin, Star, Code, Calendar, Trophy, FileText } from 'lucide-react';
+import { Mail, Star, Code, Calendar, Trophy, FileText } from 'lucide-react';
 
 
 const ProfileBadge = ({ icon: Icon, label, link, logo, isHoverCard = false, hackathons }: {
