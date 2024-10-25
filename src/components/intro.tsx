@@ -27,14 +27,14 @@ function IntroSection() {
             Hello, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500">Ayush Tiwari</span>
           </motion.h1>
           <motion.p variants={slideUp} className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-300">
-            Software Developer | Prefinal year @ IIT Bhubaneswar | Machine Learning
+            Software Development | Prefinal year @ IIT Bhubaneswar | Machine Learning
           </motion.p>
           <motion.p variants={slideUp} className="text-lg md:text-xl mb-12 max-w-2xl mx-auto text-gray-700 dark:text-gray-200">
-          I aim to craft innovative digital solutions at the intersection of 
+          I aim to craft innovative projects at the intersection of 
   <span className="font-bold"> Generative AI</span>, 
   <span className="font-bold"> Machine Learning</span>, and 
   <span className="font-bold"> Software Engineering</span>. 
-  Driven by the vision of transforming complex challenges into meaningful technology that impacts lives.
+  I'm driven by the vision of transforming complex challenges into meaningful technology that impacts lives.
           </motion.p>
         </div>
       </BackgroundLines>

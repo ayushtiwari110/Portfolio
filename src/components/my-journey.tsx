@@ -221,7 +221,7 @@ function MyJourney() {
       whileInView="visible"
       viewport={{ once: true }}
       variants={staggerChildren}
-      id="experience"
+      id="my-journey"
       className="py-16 bg-white dark:bg-gray-900 transition-colors duration-500"
     >
       <div className="">

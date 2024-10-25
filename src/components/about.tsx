@@ -3,7 +3,7 @@ import ContactCard from "./contact-card";
 
 function AboutMe() {
   return (
-    <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto px-4 py-8">
+    <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto px-4 py-8" id="about-me">
       <div className="lg:w-1/2">
         <ContactCard />
       </div>

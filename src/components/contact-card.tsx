@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 import { GitHubDarkIcon, LinkedInIcon } from 'developer-icons';
-import { Mail, MapPin, Star, Code, Calendar, Trophy } from 'lucide-react';
+import { Mail, MapPin, Star, Code, Calendar, Trophy, FileText } from 'lucide-react';
 
 
 const ProfileBadge = ({ icon: Icon, label, link, logo, isHoverCard = false, hackathons }: {
@@ -242,7 +242,7 @@ const ContactCard = () => {
                     link={item.link}
                   />
                 ))}
-                <ContactItem icon={MapPin} content="IIT Bhubaneswar, Odisha, India" />
+                <ContactItem icon={FileText} content="View Resume" link='https://drive.google.com/drive/folders/18RunmuxnePpw3Tg0kTDh_VWY3Mw-Tfsn?usp=drive_link' />
               </motion.div>
             </div>
 

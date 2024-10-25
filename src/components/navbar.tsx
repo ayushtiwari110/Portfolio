@@ -27,8 +27,10 @@ function Navbar() {
           <div className="hidden md:flex space-x-4">
             <button onClick={() => scrollToSection('intro')} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">Home</button>
             <button onClick={() => scrollToSection('tech-stack')} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">Tech Stack</button>
+            <button onClick={() => scrollToSection('about-me')} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">About Me</button>
             <button onClick={() => scrollToSection('projects')} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">Projects</button>
             <button onClick={() => scrollToSection('experience')} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">Experience</button>
+            <button onClick={() => scrollToSection('my-journey')} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">My Journey</button>
             <button onClick={() => scrollToSection('contact')} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">Contact</button>
           </div>
         </div>
