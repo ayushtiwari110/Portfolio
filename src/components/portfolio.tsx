@@ -38,6 +38,18 @@ export default function Portfolio() {
       <MyJourney />
       <WhyHireMe />
       <ContactSection />
+      <div>
+        {/* footer with copyright text and cool tagline */}
+
+        <div className="flex items-center justify-center gap-8 mx-auto px-4 py-8 text-center text-gray-600 dark:text-gray-300">
+          <p className="text-sm">
+            &copy; 2024 Ayush Tiwari. All rights reserved.
+          </p>
+          <p className="text-sm">
+            Crafted with ❤️ by Ayush Tiwari
+          </p>
+          </div>
+      </div>
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -23,8 +23,8 @@ function MyJourney() {
               <div className="space-y-3">
                 <h4 className="font-semibold text-neutral-800 dark:text-neutral-200">Key Milestones</h4>
                 <ul className="list-disc pl-5 space-y-2 text-neutral-700 dark:text-neutral-300">
-                  <li>Gained admission to IIT Bhubaneswar, marking the beginning of my formal CS education</li>
-                  <li>Completed first Python project: Tic-tac-toe game implementation</li>
+                  <li>Secured admission to IIT Bhubaneswar, marking the beginning of my formal Undergrad education</li>
+                  <li>Completed first Python project during my JEE Advanced Preparation: Tic-tac-toe game implementation</li>
                   <li>Started Android Development journey through Google's Android Basics Nanodegree</li>
                   <li>Strengthened programming fundamentals through Harvard's CS50 lectures</li>
                 </ul>
@@ -47,7 +47,7 @@ function MyJourney() {
           <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg mb-4">
             <h4 className="font-semibold text-green-700 dark:text-green-300 mb-2">Achievement Highlight</h4>
             <p className="text-green-600 dark:text-green-400">
-              Selected for IIT Bhubaneswar's Coding Society (Top 20 among 440 students)
+              Selected for IIT Bhubaneswar's Coding Society (Top 20 among 440 students batch)
             </p>
           </div>
 
@@ -59,6 +59,7 @@ function MyJourney() {
               <li>Participated in Hacktoberfest 2022, entering the open-source community</li>
               <li>Achieved a Bronze Medal in Inter IIT Tech Meet 11.0</li>
               <li>Explored blockchain fundamentals through Solana DevTour</li>
+              <li>Switched to Web Development, started learning React.</li>
             </ul>
           </div>
 
@@ -66,7 +67,7 @@ function MyJourney() {
             <h4 className="font-semibold text-neutral-800 dark:text-neutral-200 mb-2">Leadership Project</h4>
             <div className="space-y-4">
               <p className="text-neutral-700 dark:text-neutral-300">
-                Led frontend development for the General Championship App, managing UI/UX design and implementation. Handled Firebase integration and team coordination as Frontend Lead.
+                Led frontend development of two for the General Championship App, managing UI/UX design with Figma and implementation with React Native. Handled Firebase integration and team coordination as Frontend Lead.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <img
@@ -103,7 +104,7 @@ function MyJourney() {
                 Deepened expertise in modern web development, focusing on the MERN stack while embracing industry best practices and advanced architectural patterns.
               </p>
               <div className="flex flex-wrap gap-2">
-                {['React', 'Node.js', 'Express', 'MongoDB', 'TypeScript', 'Next.js'].map((tech) => (
+                {['React', 'Node.js', 'Express', 'MongoDB', 'TypeScript', 'Next.js', 'Unit Testing', 'CI/CD Pipelines'].map((tech) => (
                   <span key={tech} className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">
                     {tech}
                   </span>
@@ -121,7 +122,7 @@ function MyJourney() {
                 <li>• Developed and maintained GraphQL APIs with robust schema validation</li>
                 <li>• Created serverless functions using AWS Lambda</li>
                 <li>• Established unit testing protocols with Jest and React Testing Library</li>
-                <li>• Worked with Docker containers for consistent development environments</li>
+                <li>• Worked with AWS lambda functions for deploying chatbots.</li>
               </ul>
             </div>
 
@@ -132,10 +133,10 @@ function MyJourney() {
                   Actively contributed to the developer community through multiple channels:
                 </p>
                 <ul className="list-disc pl-5">
+                  <li>Participated in and reached finals of Ethos Hackathon at IIT Guwahati</li>
                   <li>Selected as a contributor for GirlScript Summer of Code</li>
-                  <li>Participated in and reached finals of ETHOS Hackathon at IIT Guwahati</li>
                   <li>Achieved 3rd position in the SDE Hackathon at IIT Bhubaneswar.</li>
-                  <li>Mentored junior developers in modern web development practices</li>
+                  <li>Mentored junior developers in modern web development practices as Governor of Web and Design Society.</li>
                 </ul>
               </div>
             </div>
@@ -162,7 +163,7 @@ function MyJourney() {
                 <div>
                   <h5 className="text-blue-600 dark:text-blue-400 font-medium mb-2">Freelance Development at Vdev Solutions</h5>
                   <p className="text-neutral-700 dark:text-neutral-300">
-                    Led development of authentication systems and core features, contributing to multiple web and mobile applications.
+                    Led development of authentication systems and core features, contributing to web and mobile applications.
                   </p>
                 </div>
 
@@ -171,7 +172,6 @@ function MyJourney() {
                   <ul className="list-disc pl-5 space-y-2 text-neutral-700 dark:text-neutral-300">
                     <li>Mentored General Championship 2024 App development team</li>
                     <li>Contributed to JSON Schema's CI/CD architecture</li>
-                    <li>Developed Meetio, a personal project focusing on modern web technologies</li>
                   </ul>
                 </div>
               </div>

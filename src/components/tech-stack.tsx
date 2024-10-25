@@ -161,10 +161,10 @@ const TechStackSection = () => {
   const shouldShowViewMore = isMobileView && !searchQuery && filteredTechStack.length > MOBILE_INITIAL_ITEMS
 
   return (
-    <section className="py-12 bg-background">
+    <section className="py-16 bg-background" id='tech-stack'>
       <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-primary/60 text-transparent bg-clip-text">
+          <h2 className="text-4xl font-bold mb-3 text-gray-900 dark:text-white">
             My Tech Stack
           </h2>
           <p className="text-muted-foreground">

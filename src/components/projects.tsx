@@ -14,6 +14,10 @@ function ProjectCard({ title, description, image, liveLink, techStack }: {
   liveLink: string;
   techStack: string[];
 }) {
+
+  const LinkButtonText = !liveLink.includes("null") ? "Live Preview" : liveLink.split("-")[1];
+  const Wrapper = !liveLink.includes("null") ? "a" : "div";
+
   return (
     <motion.div variants={slideUp} whileHover={{ y: -5 }} className="h-full">
       <Card className="w-full h-full overflow-hidden bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
@@ -41,10 +45,10 @@ function ProjectCard({ title, description, image, liveLink, techStack }: {
         </CardContent>
         <CardFooter className="bg-gray-50 dark:bg-gray-800 p-6 mt-auto">
           <Button asChild variant="outline" className="w-full hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
-            <a href={liveLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-              Live Preview
-              <ExternalLink className="w-4 h-4 ml-2" />
-            </a>
+            <Wrapper href={liveLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+              {LinkButtonText}
+              {LinkButtonText === "Live Preview" && <ExternalLink className="w-4 h-4 ml-2" />}
+            </Wrapper>
           </Button>
         </CardFooter>
       </Card>
@@ -59,7 +63,7 @@ export default function ProjectsSection() {
       description: "Tired of conversations that fade faster than a dial tone? Chat.io - Where connections spark, and stories unfold",
       image: "/chatio.png?height=200&width=400",
       liveLink: "https://www.chat-io.tech",
-      techStack: ["Next.js", "Typescript", "Zustand", "Shadcn", "Tailwind CSS", "Zod", "Convex", "Clerk", "Supabase", "Pusher", "LiveKit", "Gemini", "Vercel"]
+      techStack: ["Next.js", "Typescript", "Zustand", "Shadcn", "Tailwind CSS", "Zod", "Convex", "Clerk", "Supabase", "Pusher", "LiveKit", "Gemini", "Vercel", "System Design Document", "DB Diagram"]
     },
     {
       title: "Meet io",
@@ -73,7 +77,21 @@ export default function ProjectsSection() {
       description: "A application to witness the inter-branch championship of IIT Bhubaneswar",
       image: "/gcapp.png?height=200&width=400",
       liveLink: "https://github.com/SamMathelete/GC-App",
-      techStack: ["React Native", "Firebase", "Google Auth"]
+      techStack: ["React Native", "Firebase", "Google Auth", "UI/UX Design", "Figma"]
+    },
+    {
+      title: "Materials Property Prediction by ML",
+      description: "Applying Machine Learning algorithms such as CGCNN, Random Forest, to predict properties of thermoelectric materials. [Fig. by Weiyi Gong on ResearchGate]",
+      image: '/btp-project.png', // Add an image URL if available
+      liveLink: 'null-Manuscript in Preparation', // Add a live demo or GitHub link if available
+      techStack: ["Python", "CGCNN", "PyMatGen", "Scikit-learn", " Materials Project Database", "Data Cleaning & Preprocessing"],
+    },
+    {
+      title: "Smart Naka",
+      description: "A mobile application developed for Ethos Hackathon at IIT Guwahati to check vehicle theft status against a central database in real-time.",
+      image: '/ethos-project.png', // Add image if available
+      liveLink: 'https://github.com/hv789/smart-naka', // Add link if available. Could link to the installation instructions if that's all there is.
+      techStack: ["React Native", " Figma", "Typescript"],
     }
   ]
 
