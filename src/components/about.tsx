@@ -26,7 +26,7 @@ function AboutMe() {
           transition={{ delay: 0.4 }}
           className="text-gray-700 dark:text-gray-300"
         >
-          Hi, I&apos;m Ayush Tiwari, a passionate software developer with a keen interest in Machine Learning and Generative AI. Despite a non-Computer Science major, I've demonstrated a passion for software development with substantial industry experience, bridging the gap through my current project applying machine learning to thermoelectrics.. When I&apos;m not coding, you can find me participating in hackathons, solving complex problems on competitive programming platforms, or contributing to open-source projects. I believe in the power of technology to make a positive impact on the world, and I&apos;m excited to be part of this ever-evolving field.
+          Hi, I&apos;m Ayush Tiwari, a passionate software developer with a keen interest in Machine Learning and Generative AI. Despite a non-Computer Science major, I've demonstrated a passion for software development with substantial industry experience, bridging the gap through my current project applying machine learning to thermoelectrics. When I&apos;m not coding, you can find me participating in hackathons, solving complex problems on competitive programming platforms, or contributing to open-source projects. I believe in the power of technology to make a positive impact on the world, and I&apos;m excited to be part of this ever-evolving field.
         </motion.p>
       </div>
     </div>

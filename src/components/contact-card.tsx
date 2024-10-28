@@ -5,8 +5,9 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
-import { GitHubDarkIcon, LinkedInIcon } from 'developer-icons'
+import { GitHubDarkIcon, GitHubLightIcon, LinkedInIcon } from 'developer-icons'
 import { Mail, Star, Code, Calendar, FileText, ChevronDown } from 'lucide-react'
+import { useTheme } from 'next-themes'
 
 const ProfileBadge = ({ icon: Icon, label, link, logo }: { icon?: React.ElementType, label: string, link: string, logo?: string }) => {
   return (
@@ -61,7 +62,7 @@ const Section = ({ title, children }: { title: string, children: React.ReactNode
 )
 
 const HackathonCard = ({ name, position, logo, date }: { name: string, position: string, logo: string, date: string }) => (
-  <motion.div 
+  <motion.div
     className="p-3 rounded-xl bg-gray-400/10 dark:bg-gray-700/50 border border-gray-700/10"
     whileHover={{ y: -2, scale: 1.01 }}
     transition={{ duration: 0.2 }}
@@ -89,6 +90,7 @@ const HackathonCard = ({ name, position, logo, date }: { name: string, position:
 
 const ContactCard = () => {
   const [isExpanded, setIsExpanded] = useState(false)
+  const { theme } = useTheme()
 
   const achievements = [
     { label: "300+ commits", icon: GitHubDarkIcon, link: "https://github.com/ayushtiwari110" },
@@ -125,9 +127,11 @@ const ContactCard = () => {
 
   const skills = ["React", "TypeScript", "Python", "Machine Learning", "GenAI", "Next.js"]
 
+  const githubIcon = theme === 'light' ? GitHubLightIcon : GitHubDarkIcon
+
   const socialLinks = [
     { icon: LinkedInIcon, content: "linkedin.com/in/tiwari-ayush", link: "https://linkedin.com/in/tiwari-ayush" },
-    { icon: GitHubDarkIcon, content: "github.com/ayushtiwari110", link: "https://github.com/ayushtiwari110" },
+    { icon: githubIcon, content: "github.com/ayushtiwari110", link: "https://github.com/ayushtiwari110" },
     { icon: Mail, content: "21mm02005@iitbbs.ac.in", link: "mailto:21mm02005@iitbbs.ac.in" },
   ]
 
@@ -135,21 +139,22 @@ const ContactCard = () => {
     { icon: Star, label: "Open Source Contributor" },
     { icon: Code, label: "Full Stack Developer" },
     { icon: Calendar, label: "1+ Years Experience" },
+    { icon: LinkedInIcon, label: "Top CS Voice" }
   ]
 
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="w-full max-w-5xl mx-auto px-4 sm:px-6 "
+      className="w-full max-w-5xl mx-auto px-0 sm:px-6 "
     >
       <Card className="shadow-xl bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 dark:bg-gray-800 border dark:border-gray-700 overflow-hidden">
-        <CardContent className="p-4 sm:p-6">
-          <div className="flex flex-col gap-6">
+        <CardContent className="p-3 sm:p-6">
+          <div className="flex flex-col gap-3 sm:gap-6">
             {/* Header Section */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <div className="flex flex-row sm:items-center gap-4 sm:gap-6">
               <motion.div
-                className="relative w-20 h-20 sm:w-24 sm:h-24"
+                className="relative w-[72px] h-[72px] sm:w-24 sm:h-24"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -165,14 +170,15 @@ const ContactCard = () => {
                 </div>
               </motion.div>
 
-              <div className="flex-1 text-center sm:text-left">
+              <div className="flex-1 text-left">
                 <motion.h2 className="text-xl sm:text-2xl font-bold mb-1 text-gray-900 dark:text-gray-100">
                   Ayush Tiwari
                 </motion.h2>
                 <motion.p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                   Software Developer | Machine Learning | GenAI
                 </motion.p>
-                <motion.div className="flex flex-wrap justify-center sm:justify-start gap-2">
+                {/* STATS FOR MEDIUM AND LARGE SCREENS */}
+                <motion.div className="hidden sm:flex flex-wrap justify-start sm:justify-start gap-2">
                   {stats.map((stat, index) => (
                     <Badge
                       key={index}
@@ -186,9 +192,22 @@ const ContactCard = () => {
                 </motion.div>
               </div>
             </div>
+            {/* STATS FOR SMALL SCREENS */}
+            <motion.div className="flex sm:hidden flex-wrap justify-start gap-2">
+              {stats.map((stat, index) => (
+                <Badge
+                  key={index}
+                  variant="secondary"
+                  className="flex items-center gap-1 sm:px-2 sm:py-1 bg-primary/5 text-primary hover:bg-primary/10 transition-colors duration-200"
+                >
+                  <stat.icon className="w-3 h-3 flex-shrink-0" />
+                  {stat.label}
+                </Badge>
+              ))}
+            </motion.div>
 
             {/* Contact Info Section */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 sm:gap-x-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-y-2 gap-x-4 sm:gap-x-8">
               <motion.div className="space-y-1">
                 {socialLinks.slice(0, 2).map((item, index) => (
                   <ContactItem
