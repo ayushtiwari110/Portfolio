@@ -18,6 +18,7 @@
     "developer-icons": "^4.3.6",
     "framer-motion": "^11.11.9",
     "lucide-react": "^0.453.0",
+    "motion": "^12.9.2",
     "next": "14.2.15",
     "next-themes": "^0.3.0",
     "react": "^18",
