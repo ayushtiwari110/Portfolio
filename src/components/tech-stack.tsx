@@ -9,9 +9,9 @@ import { Card } from "@/components/ui/card"
 import { ReactIcon, NextJsIcon, NodeJsIcon, JavaScriptIcon, JavaIcon, TypeScriptIcon, MongoDBIcon, PrismaIcon, MySQLIcon, JestIcon, FigmaIcon, PythonIcon, CPlusPlusIcon, CircleCIIcon, PyTorchIcon, ClaudeAIIcon, GraphQLIcon, AWSIcon, DockerIcon, GitIcon, CIcon, ExpressJsLightIcon, StorybookIcon, ReactQueryIcon, ReactRouterIcon, ReduxIcon, ESLintIcon, FirebaseIcon, PrettierIcon, PostmanIcon, TailwindCSSIcon, ShadcnUIIcon, StreamIcon, SupabaseIcon, SwaggerIcon, VisualStudioCodeIcon, ZodIcon } from 'developer-icons'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import SkillsGraphModal from './skills-graph-modal'; // Import the modal
-import { initialSkillsGraph } from '@/lib/skills-graph-data'; // Import the graph data
+import { generateSkillsGraphData } from '@/lib/skills-graph-data'; // Import the graph data
 
-const categories = {
+export const categories = {
   all: "All",
   language: "Languages",
   frontend: "Frontend",
@@ -22,15 +22,15 @@ const categories = {
   ai: "AI & ML",
 } as const
 
-type Category = keyof typeof categories
+export type Category = keyof typeof categories
 
-interface TechItem {
+export interface TechItem {
   name: string
   icon: React.ElementType
   category: Category
 }
 
-const techStack: TechItem[] = [
+export const techStack: TechItem[] = [
   { name: 'C', icon: CIcon, category: 'language' },
   { name: 'C++', icon: CPlusPlusIcon, category: 'language' },
   { name: 'Java', icon: JavaIcon, category: 'language' },
@@ -70,6 +70,8 @@ const techStack: TechItem[] = [
   { name: 'VS Code', icon: VisualStudioCodeIcon, category: 'tools' },
   { name: 'Git', icon: GitIcon, category: 'tools' },
 ]
+
+const skillsGraphData = generateSkillsGraphData(techStack, categories);
 
 const MOBILE_INITIAL_ITEMS = 8
 
@@ -286,7 +288,7 @@ const TechStackSection = () => {
         <SkillsGraphModal 
           isOpen={isSkillsGraphModalOpen}
           onClose={toggleSkillsGraphModal}
-          graphData={initialSkillsGraph}
+          graphData={skillsGraphData}
         />
       </ReactFlowProvider>
     </section>

@@ -18,7 +18,7 @@ const categoryColors: Record<CustomSkillNodeData['category'], string> = {
   all: 'bg-gray-600 border-gray-700', 
 };
 
-const CustomSkillNode: React.FC<NodeProps<CustomSkillNodeData['data']>> = ({ data, selected }) => {
+const CustomSkillNode: React.FC<NodeProps<CustomSkillNodeData>> = ({ data, selected }) => {
   const { label, category, icon: Icon } = data;
   const colorClass = categoryColors[category] || categoryColors.all;
 

@@ -136,7 +136,7 @@ const SkillsGraphModal = ({ isOpen, onClose, graphData }: SkillsGraphModalProps)
             </div>
 
             {/* Content - React Flow Graph */}
-            <div className="flex-grow h-full">
+            <div className="flex-grow h-96">
               <ReactFlow
                 nodes={rfNodes}
                 edges={rfEdges}

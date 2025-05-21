@@ -1,8 +1,7 @@
 // src/lib/skills-graph-data.ts
 
-import { techStack, categories } from '@/components/tech-stack'; // Assuming this path is resolvable by TS/Webpack alias
+// import { techStack, categories } from '@/components/tech-stack'; // Assuming this path is resolvable by TS/Webpack alias
 import type { TechItem, Category } from '@/components/tech-stack'; // Import types
-
 // Define TypeScript interfaces for the graph data structure
 export interface SkillNode {
   id: string;
@@ -26,9 +25,14 @@ export interface SkillsGraphData {
   edges: SkillEdge[];
 }
 
-const generateNodeId = (name: string): string => name.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '');
+export const generateNodeId = (name: string): string => name.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '');
 
-export const generateSkillsGraphData = (techItems: TechItem[]): SkillsGraphData => {
+export const generateSkillsGraphData = (techItems: TechItem[] = [], categoryNameMap: Record<Category, string>): SkillsGraphData => {
+  // Handle undefined or empty techItems
+  if (!techItems || techItems.length === 0) {
+    return { nodes: [], edges: [] };
+  }
+
   const nodes: SkillNode[] = techItems.map((item) => ({
     id: generateNodeId(item.name),
     label: item.name,
@@ -67,22 +71,28 @@ export const generateSkillsGraphData = (techItems: TechItem[]): SkillsGraphData 
     }
   };
 
+  // Get unique category keys present in the current techItems
+  const presentCategoryKeys = Array.from(new Set(techItems.map(item => item.category).filter(Boolean))) as Category[];
+
+
   // Intra-category edges
-  Object.keys(categories).forEach((categoryKey) => {
-    const catKey = categoryKey as Category;
+  presentCategoryKeys.forEach((catKey) => {
     if (catKey === 'all') return; // Skip 'all' category for edge generation
 
     const categorySkills = techItems.filter(item => item.category === catKey);
     if (categorySkills.length > 1) {
       const firstSkillInCategory = categorySkills[0];
+      // Use the passed categoryNameMap for display names
+      const categoryDisplayName = categoryNameMap[catKey] || catKey; 
+
       for (let i = 1; i < categorySkills.length; i++) {
-        addEdge(firstSkillInCategory.name, categorySkills[i].name, `${categories[catKey]} connection`);
+        addEdge(firstSkillInCategory.name, categorySkills[i].name, `${categoryDisplayName} connection`);
       }
       // Optional: connect all skills in a category to each other (can create many edges)
       /*
       for (let i = 0; i < categorySkills.length; i++) {
         for (let j = i + 1; j < categorySkills.length; j++) {
-          addEdge(categorySkills[i].name, categorySkills[j].name, `${categories[catKey]} internal`);
+          addEdge(categorySkills[i].name, categorySkills[j].name, `${categoryDisplayName} internal`);
         }
       }
       */
@@ -108,7 +118,7 @@ export const generateSkillsGraphData = (techItems: TechItem[]): SkillsGraphData 
 };
 
 // Export a pre-generated graph using the techStack from the component file
-export const initialSkillsGraph: SkillsGraphData = generateSkillsGraphData(techStack);
+// export const initialSkillsGraph: SkillsGraphData = generateSkillsGraphData(techStack);
 
 // Export types and function
 export type { TechItem, Category };
