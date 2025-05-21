@@ -2,11 +2,14 @@
 
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ReactFlowProvider } from 'reactflow'; // Import ReactFlowProvider
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ReactIcon, NextJsIcon, NodeJsIcon, JavaScriptIcon, JavaIcon, TypeScriptIcon, MongoDBIcon, PrismaIcon, MySQLIcon, JestIcon, FigmaIcon, PythonIcon, CPlusPlusIcon, CircleCIIcon, PyTorchIcon, ClaudeAIIcon, GraphQLIcon, AWSIcon, DockerIcon, GitIcon, CIcon, ExpressJsLightIcon, StorybookIcon, ReactQueryIcon, ReactRouterIcon, ReduxIcon, ESLintIcon, FirebaseIcon, PrettierIcon, PostmanIcon, TailwindCSSIcon, ShadcnUIIcon, StreamIcon, SupabaseIcon, SwaggerIcon, VisualStudioCodeIcon, ZodIcon } from 'developer-icons'
 import { ChevronDown, ChevronUp } from 'lucide-react'
+import SkillsGraphModal from './skills-graph-modal'; // Import the modal
+import { initialSkillsGraph } from '@/lib/skills-graph-data'; // Import the graph data
 
 const categories = {
   all: "All",
@@ -122,6 +125,7 @@ const TechStackSection = () => {
   const [searchQuery, setSearchQuery] = useState('')
   const [isExpanded, setIsExpanded] = useState(false)
   const [isMobileView, setIsMobileView] = useState(false)
+  const [isSkillsGraphModalOpen, setIsSkillsGraphModalOpen] = useState(false)
 
   // Check for mobile view on mount and window resize
   useState(() => {
@@ -133,6 +137,10 @@ const TechStackSection = () => {
     window.addEventListener('resize', checkMobileView)
     return () => window.removeEventListener('resize', checkMobileView)
   })
+
+  const toggleSkillsGraphModal = () => {
+    setIsSkillsGraphModalOpen(!isSkillsGraphModalOpen)
+  }
 
   const filteredTechStack = useMemo(() => {
     let filtered = techStack
@@ -163,10 +171,18 @@ const TechStackSection = () => {
   return (
     <section className="py-16 bg-background" id='tech-stack'>
       <div className="container max-w-6xl mx-auto px-4">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 relative">
           <h2 className="text-4xl font-bold mb-3 text-gray-900 dark:text-white">
             My Tech Stack
           </h2>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={toggleSkillsGraphModal}
+            className="absolute top-0 right-0 mt-2 mr-2"
+          >
+            TLDR
+          </Button>
           <p className="text-muted-foreground">
             Technologies and tools I work with
           </p>
@@ -266,6 +282,13 @@ const TechStackSection = () => {
           )}
         </div>
       </div>
+      <ReactFlowProvider> {/* Wrap SkillsGraphModal with ReactFlowProvider */}
+        <SkillsGraphModal 
+          isOpen={isSkillsGraphModalOpen}
+          onClose={toggleSkillsGraphModal}
+          graphData={initialSkillsGraph}
+        />
+      </ReactFlowProvider>
     </section>
   )
 }
