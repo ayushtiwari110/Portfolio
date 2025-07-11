@@ -5,6 +5,17 @@ import { Linkedin } from "lucide-react"
 function ExperienceSection() {
   const experiences = [
     {
+      company: "Zenskar",
+      logo: "/zenskar-logo.jpeg",
+      linkedinUrl: "https://www.linkedin.com/company/zenskar",
+      period: "May 2025 - Present",
+      role: "Backend Engineering Intern",
+      responsibilities: [
+        "Optimized exception handling for SQS/SNS job schedulers, resolved validation issues across 20+ service endpoints, and extended backend architecture to capture anomalies across 8+ microservices with dependency injection patterns.",
+        "Designed full-stack anomalies detection system with 2,000+ lines of scalable code using atomic design principles, achieving 95% test coverage with Cypress and Vitest."
+      ]
+    },
+    {
       company: "Vdev Inc.",
       logo: "/vdev-logo.jpeg", // Replace with actual logo URL in production
       linkedinUrl: "https://www.linkedin.com/company/vdevinc/",
