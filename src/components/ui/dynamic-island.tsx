@@ -359,9 +359,10 @@ const DynamicIslandContent = ({
 }: {
   children: React.ReactNode
   id: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   willChange: any
   screenSize: string
-  [key: string]: any
+  [key: string]: unknown
 }) => {
   const { state, presets } = useDynamicIslandSize()
   const currentSize = presets[state.size]
@@ -500,8 +501,7 @@ const DynamicTitle = ({ className, children }: MotionProps) => {
 }
 
 const DynamicDescription = ({ className, children }: MotionProps) => {
-  const { state } = useDynamicIslandSize()
-  const { size, previousSize } = state
+  useDynamicIslandSize()
   const willChange = useWillChange()
 
   return (
