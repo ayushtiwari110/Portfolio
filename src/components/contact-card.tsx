@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent } from '@/components/ui/card'
+import { CardContent } from '@/components/ui/card'
 import { GitHubDarkIcon, GitHubLightIcon, LinkedInIcon } from 'developer-icons'
 import { Mail, Star, Code, Calendar, FileText, ChevronDown } from 'lucide-react'
 import { useTheme } from 'next-themes'
@@ -44,11 +44,11 @@ const ContactItem = ({ icon: Icon, logo, content, link }: { icon?: React.Element
   )
 }
 
-const SkillBadge = ({ label }: { label: string }) => (
-  <span className="px-3 py-1 text-xs font-medium bg-white  dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">
-    {label}
-  </span>
-)
+// const SkillBadge = ({ label }: { label: string }) => (
+//   <span className="px-3 py-1 text-xs font-medium bg-white  dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">
+//     {label}
+//   </span>
+// )
 
 const Section = ({ title, children }: { title: string, children: React.ReactNode }) => (
   <motion.div
@@ -126,7 +126,7 @@ const ContactCard = () => {
     }
   ]
 
-  const skills = ["React", "TypeScript", "Python", "Machine Learning", "GenAI", "Next.js"]
+  // const skills = ["React", "TypeScript", "Python", "Machine Learning", "GenAI", "Next.js"]
 
   const githubIcon = theme === 'light' ? GitHubLightIcon : GitHubDarkIcon
 
