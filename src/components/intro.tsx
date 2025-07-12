@@ -21,7 +21,7 @@ function AchievementsDynamicIsland() {
   // Auto-cycling effect
   useEffect(() => {
     const cycle = [
-      "medium",        // Current Role
+      "compactLong",        // Current Role
       "compact",        // Experience
       "compact",    // Research
       "compactMedium",  // Hackathons
@@ -197,7 +197,7 @@ function IntroSection() {
           </motion.h1>
 
           <motion.div variants={slideUp} className="my-4 mt-8 flex justify-center">
-            <DynamicIslandProvider initialSize="compact">
+            <DynamicIslandProvider initialSize="compactLong">
               <AchievementsDynamicIsland />
             </DynamicIslandProvider>
           </motion.div>
