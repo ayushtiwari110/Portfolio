@@ -8,6 +8,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { GitHubDarkIcon, GitHubLightIcon, LinkedInIcon } from 'developer-icons'
 import { Mail, Star, Code, Calendar, FileText, ChevronDown } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import SpotlightCard from './ui/spotlight-card'
 
 const ProfileBadge = ({ icon: Icon, label, link, logo }: { icon?: React.ElementType, label: string, link: string, logo?: string }) => {
   return (
@@ -148,7 +149,11 @@ const ContactCard = () => {
       animate="visible"
       className="w-full max-w-5xl mx-auto px-0 sm:px-6 "
     >
-      <Card className="shadow-xl bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 dark:bg-gray-800 border dark:border-gray-700 overflow-hidden">
+      <SpotlightCard
+        spotlightColor="rgba(0, 229, 255, 0.2)"
+        className="bg-gradient-to-br from-slate-50/60 via-white/80 to-blue-50/40 dark:from-slate-900/60 dark:via-gray-900/80 dark:to-blue-950/40 backdrop-blur-sm border border-transparent bg-clip-padding before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-200/20 before:via-purple-200/10 before:to-cyan-200/20 dark:before:from-blue-700/20 dark:before:via-purple-700/10 dark:before:to-cyan-700/20 before:rounded-2xl before:-z-10 before:blur-[1px] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+      >
+        {/* <Card className="shadow-xl bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 dark:bg-gray-800 border dark:border-gray-700 overflow-hidden"> */}
         <CardContent className="p-3 sm:p-6">
           <div className="flex flex-col gap-3 sm:gap-6">
             {/* Header Section */}
@@ -230,7 +235,17 @@ const ContactCard = () => {
                 <ContactItem icon={FileText} content="View Resume" link='https://drive.google.com/drive/folders/18RunmuxnePpw3Tg0kTDh_VWY3Mw-Tfsn?usp=drive_link' />
               </motion.div>
             </div>
-
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {achievements.map((achievement, index) => (
+                <ProfileBadge
+                  key={index}
+                  icon={achievement.icon}
+                  logo={achievement.logo}
+                  label={achievement.label}
+                  link={achievement.link}
+                />
+              ))}
+            </div>
             {/* Expand/Collapse Button */}
             <motion.button
               onClick={() => setIsExpanded(!isExpanded)}
@@ -258,28 +273,18 @@ const ContactCard = () => {
                   className="space-y-8 overflow-hidden"
                 >
                   {/* Skills Section */}
-                  <Section title="Skills">
+                  {/* <Section title="Skills">
                     <div className="flex flex-wrap gap-2">
                       {skills.map((skill, index) => (
                         <SkillBadge key={index} label={skill} />
                       ))}
                     </div>
-                  </Section>
+                  </Section> */}
 
                   {/* Achievements Section */}
-                  <Section title="Coding Profiles">
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                      {achievements.map((achievement, index) => (
-                        <ProfileBadge
-                          key={index}
-                          icon={achievement.icon}
-                          logo={achievement.logo}
-                          label={achievement.label}
-                          link={achievement.link}
-                        />
-                      ))}
-                    </div>
-                  </Section>
+                  {/* <Section title="Coding Profiles"> */}
+
+                  {/* </Section> */}
 
                   {/* Hackathons Section */}
                   <Section title="Hackathons">
@@ -294,7 +299,8 @@ const ContactCard = () => {
             </AnimatePresence>
           </div>
         </CardContent>
-      </Card>
+        {/* </Card> */}
+      </SpotlightCard>
     </motion.div>
   )
 }

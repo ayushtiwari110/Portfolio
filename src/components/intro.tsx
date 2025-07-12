@@ -34,7 +34,7 @@ function IntroSection() {
           </motion.h1>
 
           <motion.p variants={slideUp} className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-300">
-            Software Development | Prefinal year @ IIT Bhubaneswar | Machine Learning
+            Software Development | Final year @ IIT Bhubaneswar | Machine Learning
           </motion.p>
           <motion.p variants={slideUp} className="text-lg md:text-xl mb-5 max-w-2xl mx-auto text-gray-700 dark:text-gray-200">
             I aim to craft innovative projects at the intersection of
