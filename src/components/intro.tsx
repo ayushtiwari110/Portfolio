@@ -21,7 +21,7 @@ function AchievementsDynamicIsland() {
   // Auto-cycling effect
   useEffect(() => {
     const cycle = [
-      "compactLong",        // Current Role
+      "compactMedium",        // Current Role
       "compact",        // Experience
       "compact",    // Research
       "compactMedium",  // Hackathons
