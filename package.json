@@ -16,7 +16,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "developer-icons": "^4.3.6",
-    "framer-motion": "^11.11.9",
+    "framer-motion": "^11.18.2",
     "lucide-react": "^0.453.0",
     "motion": "^12.9.2",
     "next": "14.2.15",

@@ -26,7 +26,7 @@ function AboutMe() {
           transition={{ delay: 0.4 }}
           className="text-gray-700 dark:text-gray-300"
         >
-          Hi, I&apos;m Ayush Tiwari, a passionate software developer with a keen interest in Machine Learning and Generative AI. Despite a non-Computer Science major, I've demonstrated a passion for software development with substantial industry experience, bridging the gap through my current project applying machine learning to thermoelectrics. When I&apos;m not coding, you can find me participating in hackathons, solving complex problems on competitive programming platforms, or contributing to open-source projects. I believe in the power of technology to make a positive impact on the world, and I&apos;m excited to be part of this ever-evolving field.
+          Hi, I&apos;m Ayush Tiwari, a software developer with 12+ months of hands-on experience as an SDE intern at startups. Currently exploring the fascinating world of LLMs and AI Agents while pursuing my final year at IIT Bhubaneswar. My journey has been marked by some exciting milestones - from being a Bronze Medalist at Inter IIT Tech Meet 11.0 to reaching the finals of multiple hackathons and securing rank 1114 among 45,000+ participants in IICPC Code Prelims 2025. I&apos;ve developed expertise in software design patterns and architecture through real-world projects, and I&apos;m passionate about bridging traditional engineering with cutting-edge AI technologies. When I&apos;m not building scalable systems, you&apos;ll find me contributing to open-source projects or diving deep into the latest developments in artificial intelligence.
         </motion.p>
       </div>
     </div>
