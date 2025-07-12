@@ -21,7 +21,7 @@ function AchievementsDynamicIsland() {
   // Auto-cycling effect
   useEffect(() => {
     const cycle = [
-      "compact",        // Current Role
+      "compactLong",        // Current Role
       "compact",        // Experience
       "compact",    // Research
       "compactMedium",  // Hackathons
@@ -48,7 +48,7 @@ function AchievementsDynamicIsland() {
             <div className="flex items-center gap-2">
               <Building className="h-4 w-4 text-emerald-400 flex-shrink-0" />
               <DynamicDescription className="text-sm font-medium text-neutral-100 dark:text-neutral-100 truncate">
-                Backend Intern @ Zenskar
+                Backend Engineering Intern @ Zenskar
               </DynamicDescription>
             </div>
           </DynamicContainer>
