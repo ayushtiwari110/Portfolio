@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ReactIcon, NextJsIcon, NodeJsIcon, JavaScriptIcon, JavaIcon, TypeScriptIcon, MongoDBIcon, PrismaIcon, MySQLIcon, JestIcon, FigmaIcon, PythonIcon, CPlusPlusIcon, CircleCIIcon, PyTorchIcon, ClaudeAIIcon, GraphQLIcon, AWSIcon, DockerIcon, GitIcon, CIcon, ExpressJsLightIcon, StorybookIcon, ReactQueryIcon, ReactRouterIcon, ReduxIcon, ESLintIcon, FirebaseIcon, PrettierIcon, PostmanIcon, TailwindCSSIcon, ShadcnUIIcon, StreamIcon, SupabaseIcon, SwaggerIcon, VisualStudioCodeIcon, ZodIcon } from 'developer-icons'
+import { ReactIcon, NextJsIcon, NodeJsIcon, JavaScriptIcon, JavaIcon, TypeScriptIcon, MongoDBIcon, PrismaIcon, MySQLIcon, JestIcon, FigmaIcon, PythonIcon, CPlusPlusIcon, CircleCIIcon, ClaudeAIIcon, GraphQLIcon, AWSIcon, DockerIcon, GitIcon, CIcon, ExpressJsLightIcon, StorybookIcon, ReactQueryIcon, ReactRouterIcon, ReduxIcon, ESLintIcon, FirebaseIcon, PrettierIcon, PostmanIcon, TailwindCSSIcon, ShadcnUIIcon, SupabaseIcon, SwaggerIcon, VisualStudioCodeIcon, ZodIcon } from 'developer-icons'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 
 const categories = {
@@ -44,25 +44,34 @@ const techStack: TechItem[] = [
   { name: 'Node.js', icon: NodeJsIcon, category: 'backend' },
   { name: 'Next.js', icon: NextJsIcon, category: 'frontend' },
   { name: 'Express.js', icon: ExpressJsLightIcon, category: 'backend' },
+  { name: 'FastAPI', icon: PythonIcon, category: 'backend' },
+  { name: 'GraphQL', icon: GraphQLIcon, category: 'backend' },
+  { name: 'Clerk', icon: ReactIcon, category: 'backend' },
+  { name: 'Convex', icon: NodeJsIcon, category: 'backend' },
+  { name: 'Kafka', icon: ReactIcon, category: 'backend' },
   { name: 'MongoDB', icon: MongoDBIcon, category: 'database' },
   { name: 'SQL', icon: MySQLIcon, category: 'database' },
+  { name: 'SQLAlchemy', icon: PythonIcon, category: 'database' },
   { name: 'Prisma ORM', icon: PrismaIcon, category: 'database' },
   { name: 'Firebase', icon: FirebaseIcon, category: 'database' },
   { name: 'Supabase', icon: SupabaseIcon, category: 'database' },
-  { name: 'Stream', icon: StreamIcon, category: 'backend' },
+  { name: 'Langchain', icon: ClaudeAIIcon, category: 'ai' },
+  { name: 'PyMatGen', icon: PythonIcon, category: 'ai' },
+  { name: 'AWS', icon: AWSIcon, category: 'devops' },
+  { name: 'Docker', icon: DockerIcon, category: 'devops' },
+  { name: 'CI/CD', icon: CircleCIIcon, category: 'devops' },
+  { name: 'Prometheus', icon: CircleCIIcon, category: 'devops' },
+  { name: 'Grafana', icon: CircleCIIcon, category: 'devops' },
+  { name: 'Loki', icon: CircleCIIcon, category: 'devops' },
+  { name: 'Zipkin', icon: CircleCIIcon, category: 'devops' },
+  { name: 'OpenTelemetry', icon: CircleCIIcon, category: 'devops' },
   { name: 'Jest', icon: JestIcon, category: 'tools' },
   { name: 'Zod', icon: ZodIcon, category: 'tools' },
   { name: 'StoryBook', icon: StorybookIcon, category: 'tools' },
-  { name: 'CI/CD', icon: CircleCIIcon, category: 'devops' },
   { name: 'ESLint', icon: ESLintIcon, category: 'tools' },
   { name: 'Prettier', icon: PrettierIcon, category: 'tools' },
   { name: 'Postman', icon: PostmanIcon, category: 'tools' },
   { name: 'Swagger', icon: SwaggerIcon, category: 'tools' },
-  { name: 'PyTorch', icon: PyTorchIcon, category: 'ai' },
-  { name: 'Langchain', icon: ClaudeAIIcon, category: 'ai' },
-  { name: 'GraphQL', icon: GraphQLIcon, category: 'backend' },
-  { name: 'AWS', icon: AWSIcon, category: 'devops' },
-  { name: 'Docker', icon: DockerIcon, category: 'devops' },
   { name: 'Figma', icon: FigmaIcon, category: 'tools' },
   { name: 'VS Code', icon: VisualStudioCodeIcon, category: 'tools' },
   { name: 'Git', icon: GitIcon, category: 'tools' },
