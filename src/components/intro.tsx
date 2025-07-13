@@ -32,13 +32,26 @@ function AchievementsDynamicIsland() {
     const interval = setInterval(() => {
       setCurrentCycleIndex((prevIndex) => {
         const nextIndex = (prevIndex + 1) % cycle.length;
-        setSize(cycle[nextIndex]);
         return nextIndex;
       });
     }, 3000); // 3 seconds per state
 
     return () => clearInterval(interval);
-  }, [setSize]);
+  }, []);
+
+  // Synchronize size with content changes
+  useEffect(() => {
+    const cycle = [
+      "compactMedium",        // Current Role + Status
+      "compact",              // Key Achievement  
+      "compactLong",          // Tech Skills
+      "compactMedium",        // Competition Stats
+      "compact",              // Research Impact
+      "compactLong"           // Available Status
+    ] as const;
+
+    setSize(cycle[currentCycleIndex]);
+  }, [currentCycleIndex, setSize]);
 
   const renderContent = () => {
     switch (currentCycleIndex) {
