@@ -372,7 +372,7 @@ const DynamicIslandContent = ({
   return (
     <motion.div
       id={id}
-      className="mx-auto h-0 w-0 items-center justify-center isolate bg-[#000000] dark:bg-[#000000] text-center transition duration-300 ease-in-out overflow-hidden"
+      className="mx-auto h-0 w-0 items-center justify-center isolate bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 dark:from-gray-800 dark:via-gray-900 dark:to-black text-center transition duration-300 ease-in-out overflow-hidden border border-slate-600/40 dark:border-gray-600/30"
       animate={{
         width: dimensions.width,
         height: dimensions.height,
@@ -389,9 +389,9 @@ const DynamicIslandContent = ({
       }}
       style={{ 
         willChange,
-        backdropFilter: 'blur(8px)',
-        WebkitBackdropFilter: 'blur(8px)',
-        boxShadow: '0 0 0 1px rgba(0, 0, 0, 0.05)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
       }}
       {...props}
     >

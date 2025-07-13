@@ -11,7 +11,7 @@ import {
   DynamicDescription,
   useDynamicIslandSize
 } from "./ui/dynamic-island";
-import { Trophy, Code, FileText, Briefcase, Building, GraduationCap } from "lucide-react";
+import { Code, Star, Target, Rocket, Award, TrendingUp, Brain } from "lucide-react";
 
 function AchievementsDynamicIsland() {
   const { setSize } = useDynamicIslandSize();
@@ -21,12 +21,12 @@ function AchievementsDynamicIsland() {
   // Auto-cycling effect
   useEffect(() => {
     const cycle = [
-      "compactMedium",        // Current Role
-      "compact",        // Experience
-      "compact",    // Research
-      "compactMedium",  // Hackathons
-      "compactLong",         // Competitions
-      "compact"     // Tech + Education
+      "compactMedium",        // Current Role + Status
+      "compact",              // Key Achievement  
+      "compactLong",          // Tech Skills
+      "compactMedium",        // Competition Stats
+      "compact",              // Research Impact
+      "compactLong"           // Available Status
     ] as const;
 
     const interval = setInterval(() => {
@@ -35,89 +35,95 @@ function AchievementsDynamicIsland() {
         setSize(cycle[nextIndex]);
         return nextIndex;
       });
-    }, 2000); // 2 seconds per state
+    }, 3000); // 3 seconds per state
 
     return () => clearInterval(interval);
   }, [setSize]);
 
   const renderContent = () => {
     switch (currentCycleIndex) {
-      case 0: // compact - Current Role
-        return (
-          <DynamicContainer className="flex items-center justify-center h-full w-full px-4">
-            <div className="flex items-center gap-2">
-              <Building className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-              <DynamicDescription className="text-sm font-medium text-neutral-100 dark:text-neutral-100 truncate">
-                Backend Engineering Intern @ Zenskar
-              </DynamicDescription>
-            </div>
-          </DynamicContainer>
-        );
-
-      case 1: // compact - Experience
-        return (
-          <DynamicContainer className="flex items-center justify-center h-full w-full px-4">
-            <div className="flex items-center gap-2">
-              <Briefcase className="h-4 w-4 text-blue-400 flex-shrink-0" />
-              <DynamicDescription className="text-sm font-medium text-neutral-100 dark:text-neutral-100 truncate">
-                12+ months SDE experience
-              </DynamicDescription>
-            </div>
-          </DynamicContainer>
-        );
-
-      case 2: // compactLong - Research
-        return (
-          <DynamicContainer className="flex items-center justify-center h-full w-full px-4">
-            <div className="flex items-center gap-2">
-              <FileText className="h-4 w-4 text-indigo-400 flex-shrink-0" />
-              <DynamicDescription className="text-sm font-medium text-neutral-100 dark:text-neutral-100 truncate">
-                Research Paper Under Review
-              </DynamicDescription>
-            </div>
-          </DynamicContainer>
-        );
-
-      case 3: // compactMedium - Hackathons
+      case 0: // compactMedium - Current Role + Status
         return (
           <DynamicContainer className="flex flex-col items-center justify-center h-full w-full px-4 py-2">
             <div className="flex items-center gap-2 mb-1">
-              <Trophy className="h-4 w-4 text-yellow-400 flex-shrink-0" />
+              <div className="relative">
+                <Rocket className="h-4 w-4 text-emerald-400 flex-shrink-0" />
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+              </div>
               <DynamicDescription className="text-sm font-medium text-neutral-100 dark:text-neutral-100">
-                3x Hackathon Finalist
+                Backend Engineering Intern @ Zenskar
               </DynamicDescription>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-sm">🥉</span>
-              <DynamicDescription className="text-xs text-gray-300 dark:text-gray-300">
-                Bronze Medalist - Inter IIT Tech Meet 11.0
-              </DynamicDescription>
+            <div className="flex items-center gap-1">
+              <span className="text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-300 rounded-full">Current Role</span>
             </div>
           </DynamicContainer>
         );
 
-      case 4: // medium - Competitions
+      case 1: // compact - Key Achievement
         return (
-          <DynamicContainer className="flex flex-col items-center justify-center h-full w-full px-4 py-3">
-            <div className="space-y-1 text-center">
-              <DynamicDescription className="text-xs text-gray-300 dark:text-gray-300">
-                IICPC Prelims 2025: <span className="text-purple-300 font-medium">Top 2.5% Nationwide</span>
-              </DynamicDescription>
-              <DynamicDescription className="text-xs text-gray-300 dark:text-gray-300">
-                Graph Contest: <span className="text-blue-300 font-medium">AIR 170/800+</span>
-              </DynamicDescription>
-            </div>
-          </DynamicContainer>
-        );
-
-      case 5: // compactLong - Tech + Education
-        return (
-          <DynamicContainer className="flex items-center justify-center h-full w-full px-3">
+          <DynamicContainer className="flex items-center justify-center h-full w-full px-4">
             <div className="flex items-center gap-2">
-              <GraduationCap className="h-4 w-4 text-cyan-400 flex-shrink-0" />
+              <Award className="h-4 w-4 text-yellow-400 flex-shrink-0 animate-pulse" />
               <DynamicDescription className="text-sm font-medium text-neutral-100 dark:text-neutral-100 truncate">
-                Senior @ IIT Bhubaneswar
+                <span className="text-yellow-300">Top 2.5%</span> IICPC 2025 Prelims
               </DynamicDescription>
+            </div>
+          </DynamicContainer>
+        );
+
+      case 2: // compactLong - Tech Skills
+        return (
+          <DynamicContainer className="flex items-center justify-center h-full w-full px-4">
+            <div className="flex items-center gap-3">
+              <Brain className="h-4 w-4 text-purple-400 flex-shrink-0" />
+              <div className="flex items-center gap-2">
+                <span className="text-xs px-2 py-0.5 bg-purple-500/20 text-purple-300 rounded-full">AI/ML</span>
+                <span className="text-xs px-2 py-0.5 bg-blue-500/20 text-blue-300 rounded-full">Full-Stack</span>
+                <span className="text-xs px-2 py-0.5 bg-green-500/20 text-green-300 rounded-full">DevOps</span>
+              </div>
+            </div>
+          </DynamicContainer>
+        );
+
+      case 3: // compactMedium - Competition Stats
+        return (
+          <DynamicContainer className="flex flex-col items-center justify-center h-full w-full px-4 py-2">
+            <div className="flex items-center gap-2 mb-1">
+              <TrendingUp className="h-4 w-4 text-blue-400 flex-shrink-0" />
+              <DynamicDescription className="text-sm font-medium text-neutral-100 dark:text-neutral-100">
+                Growing Competitive Programmer
+              </DynamicDescription>
+            </div>
+            <div className="flex items-center gap-3 text-xs">
+              <span className="text-red-300">CodeForces: <span className="font-medium">Pupil</span></span>
+              <span className="text-yellow-300">LeetCode Rewind 2024: <span className="font-medium">Top 98%</span></span>
+            </div>
+          </DynamicContainer>
+        );
+
+      case 4: // compact - Research Impact
+        return (
+          <DynamicContainer className="flex items-center justify-center h-full w-full px-4">
+            <div className="flex items-center gap-2">
+              <Star className="h-4 w-4 text-indigo-400 flex-shrink-0" />
+              <DynamicDescription className="text-sm font-medium text-neutral-100 dark:text-neutral-100 truncate">
+                <span className="text-indigo-300">7+ Projects</span> • ML Research
+              </DynamicDescription>
+            </div>
+          </DynamicContainer>
+        );
+
+      case 5: // compactLong - Available Status
+        return (
+          <DynamicContainer className="flex items-center justify-center h-full w-full px-4">
+            <div className="flex items-center gap-3">
+              <Target className="h-4 w-4 text-cyan-400 flex-shrink-0" />
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-neutral-100">Open for</span>
+                <span className="text-xs px-2 py-0.5 bg-cyan-500/20 text-cyan-300 rounded-full">SDE Roles</span>
+                <span className="text-xs px-2 py-0.5 bg-pink-500/20 text-pink-300 rounded-full">May 2026</span>
+              </div>
             </div>
           </DynamicContainer>
         );
