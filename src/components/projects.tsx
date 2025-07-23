@@ -105,10 +105,10 @@ export default function ProjectsSection() {
       techStack: ["React Native", "Firebase", "Google Auth", "UI/UX Design", "Figma", "TypeScript"]
     },
     {
-      title: "Materials Property Prediction by ML",
-      description: "Machine learning pipeline for predicting thermoelectric material properties using Graph Neural Networks and Random Forest models on 70k+ crystal structures.",
+      title: "Published Research: ML-Driven Materials Discovery",
+      description: "Developed machine learning models using GNNs and Random Forest to predict thermoelectric material properties. Achieved 1.5-2x better accuracy than existing models, published in ACS Applied Energy Materials.",
       image: '/btp-project.png',
-      liveLink: 'null-Manuscript in Preparation',
+      liveLink: 'https://pubs.acs.org/doi/10.1021/acsaem.5c01456',
       techStack: ["Python", "Graph Neural Networks", "PyMatGen", "Scikit-learn", "Materials Project Database", "Data Pipeline"],
     },
     {
