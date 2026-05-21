@@ -10,7 +10,7 @@ import {
   DynamicDescription,
   useDynamicIslandSize
 } from "./ui/dynamic-island";
-import { Code, Star, Rocket, Award, TrendingUp, Brain } from "lucide-react";
+import { Code, Star, Rocket, Award, TrendingUp, Brain, Terminal } from "lucide-react";
 
 function AchievementsDynamicIsland() {
   const { setSize } = useDynamicIslandSize();
@@ -234,11 +234,12 @@ function IntroSection() {
             <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#38bdf8_0%,#6366f1_50%,#38bdf8_100%)]" />
             <button
               onClick={() => setIsModalOpen(true)}
-              className="relative inline-flex h-10 items-center justify-center rounded-full bg-white dark:bg-gray-900 px-5 py-5 text-xl font-bold backdrop-blur-3xl transition-all duration-300 transform hover:-translate-y-1"
+              className="relative inline-flex h-10 items-center justify-center rounded-full bg-white dark:bg-gray-900 px-5 py-5 text-xl font-bold backdrop-blur-3xl transition-all duration-300 transform hover:-translate-y-1 gap-2"
             >
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500 font-bold">
-                TL;DR <span className="ml-1 font-bold">⚡</span>
+                TL;DR
               </span>
+              <Terminal className="w-5 h-5 text-indigo-500 dark:text-sky-400 stroke-[2.5]" />
             </button>
           </motion.div>
 
