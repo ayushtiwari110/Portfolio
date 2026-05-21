@@ -214,13 +214,6 @@ function MyJourney() {
                 </div>
 
                 <div>
-                  <h5 className="text-blue-600 dark:text-blue-400 font-medium mb-2">MedTech Innovation</h5>
-                  <p className="text-neutral-700 dark:text-neutral-300">
-                    Developing a novel ML-based screening system for orthodontic residue detection using staining dyes, combining computer vision with medical diagnostics.
-                  </p>
-                </div>
-
-                <div>
                   <h5 className="text-blue-600 dark:text-blue-400 font-medium mb-2">AI Development</h5>
                   <p className="text-neutral-700 dark:text-neutral-300">
                     Explored generative AI applications through LangChain.js, building practical implementations and understanding large language model integrations.
@@ -250,18 +243,41 @@ function MyJourney() {
       title: "2025",
       content: (
         <div className="space-y-6">
-          <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 p-4 rounded-lg">
+          <div className="bg-gradient-to-r from-indigo-50 to-emerald-50 dark:from-indigo-900/20 dark:to-emerald-900/20 p-4 rounded-lg">
             <h4 className="font-semibold text-neutral-800 dark:text-neutral-200 mb-2">Career Milestone</h4>
             <p className="text-neutral-700 dark:text-neutral-300">
-              Successfully secured Backend Engineering Internship at Zenskar through competitive off-campus recruitment, marking transition to product-based company experience.
+              Secured SDE-1 placement at Eternal on Day 0 of campus placements (top 5% of shortlisted candidates) and completed Backend Engineering Internship at Zenskar.
             </p>
           </div>
 
           <div className="space-y-6">
             <div className="border-l-4 border-green-500 pl-4">
               <h4 className="font-semibold text-neutral-800 dark:text-neutral-200 mb-3">💼 Professional Growth</h4>
-              <div className="space-y-4">
-                <div>
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="h-16 w-16 p-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <img
+                        src="/eternal.png"
+                        alt="Eternal Logo"
+                        className="h-full object-contain"
+                      />
+                    </div>
+                    <div>
+                      <h5 className="text-indigo-600 dark:text-indigo-400 font-semibold text-lg leading-tight">
+                        Eternal
+                      </h5>
+                      <p className="text-sm font-medium text-neutral-800 dark:text-neutral-200 mt-1">
+                        Upcoming Software Development Engineer (SDE-1)
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-neutral-700 dark:text-neutral-300">
+                    Secured a Software Development Engineer (SDE-1) position at Eternal during the Day 0 campus recruitment drive, placing within the top 5% of shortlisted candidates.
+                  </p>
+                </div>
+
+                <div className="border-t border-neutral-200 dark:border-neutral-800 pt-6">
                   <h5 className="text-green-600 dark:text-green-400 font-medium mb-2">Zenskar - Backend Engineering Intern</h5>
                   <div className="mt-3">
                     <img
@@ -327,7 +343,6 @@ function MyJourney() {
               <h4 className="font-semibold text-neutral-800 dark:text-neutral-200 mb-3">📚 Research & Publications</h4>
               <ul className="list-disc pl-5 space-y-2 text-neutral-700 dark:text-neutral-300">
                 <li>Material Science ML Project: Successfully converted B.Tech project into research paper (currently under review)</li>
-                <li>MedTech Innovation: Completed ML-based orthodontic residue detection system using computer vision</li>
               </ul>
             </div>
           </div>
@@ -338,22 +353,97 @@ function MyJourney() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mb-1">Education</p>
-                  <p className="font-medium text-neutral-800 dark:text-neutral-200 text-sm">IIT Bhubaneswar, Final Year</p>
-                  <p className="text-xs text-neutral-600 dark:text-neutral-400">Expected Graduation: 2026</p>
+                  <p className="font-medium text-neutral-800 dark:text-neutral-200 text-sm">IIT Bhubaneswar</p>
+                  <p className="text-xs text-neutral-600 dark:text-neutral-400">B.Tech + M.Tech Graduate (May 2026)</p>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-green-600 dark:text-green-400 mb-1">Current Role</p>
-                  <p className="font-medium text-neutral-800 dark:text-neutral-200 text-sm">Backend Engineering Intern</p>
-                  <p className="text-xs text-neutral-600 dark:text-neutral-400">Zenskar</p>
+                  <p className="text-sm font-medium text-green-600 dark:text-green-400 mb-1">Upcoming Role</p>
+                  <p className="font-medium text-neutral-800 dark:text-neutral-200 text-sm">Upcoming SDE-1</p>
+                  <p className="text-xs text-neutral-600 dark:text-neutral-400">Eternal</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "2026",
+      content: (
+        <div className="space-y-6">
+          <div className="bg-gradient-to-br from-purple-500/10 via-indigo-500/5 to-transparent dark:from-purple-500/15 dark:via-indigo-500/5 dark:to-transparent p-5 rounded-2xl border border-purple-200/50 dark:border-purple-800/30 shadow-md relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-2xl pointer-events-none" />
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-[#2ec866] to-[#1ba94c] text-white shadow-sm select-none">
+                  🏆 Global Rank 50
+                </span>
+                <span className="text-[11px] font-semibold text-purple-700 dark:text-purple-300 bg-purple-100/50 dark:bg-purple-900/30 px-2.5 py-1 rounded-full select-none">
+                  1,349 Finishers
+                </span>
+                <span className="text-[11px] font-medium text-neutral-500 dark:text-neutral-400 select-none">
+                  12,885+ Registered
+                </span>
+              </div>
               
-              <div className="border-t border-neutral-200/50 dark:border-neutral-700/50 pt-3">
-                <p className="text-sm font-medium text-purple-600 dark:text-purple-400 mb-2">Seeking Opportunities</p>
-                <p className="text-neutral-700 dark:text-neutral-300">
-                  Actively looking for full-time <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-sm font-medium">SDE</span> and <span className="px-2 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-sm font-medium">AI-related</span> roles. 
-                  Open to opportunities in product-based companies and innovative startups.
+              <div className="space-y-1.5">
+                <h4 className="font-extrabold text-neutral-900 dark:text-neutral-100 text-xl leading-tight">
+                  Support Triage Agent • HackerRank 2026
+                </h4>
+                <p className="text-neutral-700 dark:text-neutral-300 text-sm leading-relaxed">
+                  Secured an outstanding <strong>Rank 50 out of 1,349</strong> developers who completed all milestones globally, engineering an AI-powered multi-domain customer support-ticket triage pipeline for HackerRank, Claude, and Visa.
                 </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="border-l-4 border-indigo-500 pl-4">
+              <h4 className="font-semibold text-neutral-800 dark:text-neutral-200 mb-3">🤖 Production-Ready Pipeline Architecture</h4>
+              <div className="space-y-5">
+                <p className="text-neutral-700 dark:text-neutral-300">
+                  Developed an agentic support triage system using a declarative Chain of Responsibility pipeline. The agent routes incoming customer tickets to dedicated corpus slices and executes grounded LLM workflows with deterministic safety and social filters.
+                </p>
+
+                <div className="flex flex-col gap-6 my-6">
+                  <div className="border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden bg-white dark:bg-gray-800 p-2 shadow-sm">
+                    <img
+                      src="/hackerrank-orchestrate.png"
+                      alt="HackerRank Orchestrate 2026 Certificate"
+                      className="rounded-lg w-full object-contain"
+                    />
+                  </div>
+                  <div className="border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden bg-white dark:bg-gray-800 p-2 shadow-sm">
+                    <img
+                      src="/h-o-system-design.png"
+                      alt="Support Triage Agent System Design Diagram"
+                      className="rounded-lg w-full object-contain"
+                    />
+                  </div>
+                </div>
+
+                <ul className="list-disc pl-5 space-y-2 text-neutral-700 dark:text-neutral-300 text-sm">
+                  <li><strong>Top 3.7% Global Finishers:</strong> Secured <strong>Global Rank 50 out of 1,349</strong> developers completing all milestones (among 12,885+ total registrations).</li>
+                  <li><strong>Chain of Responsibility Pipeline:</strong> Built a sequence of stages (Safety, Social Bypass, Classifier, Retrieval, Grader, Generator, Verifier) with clean early-exit short-circuiting.</li>
+                  <li><strong>Routing & Semantic Search:</strong> Pre-classified ticket metadata (company, product area) to partition vector DB query space, optimizing retrieval precision and token budget.</li>
+                  <li><strong>Corrective RAG (CRAG) & Verification:</strong> Graded retrieval relevance with fallback query reformulation, and utilized an Evaluator-Optimizer loop for structured generation verification.</li>
+                  <li><strong>Zero-Dependency Observability:</strong> Coded a custom JSONL tracer tracking timing and errors to calculate P50/P95 latencies per stage.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h4 className="font-semibold text-neutral-800 dark:text-neutral-200 mb-3">💻 Technical Stack & Paradigms</h4>
+              <div className="flex flex-wrap gap-2">
+                {['Anthropic: Building Effective Agents', 'Chain of Responsibility', 'Routing (Classifier)', 'Corrective RAG (CRAG)', 'Evaluator-Optimizer', 'Observer & Strategy Patterns', 'Local Vector Search (Chroma)', 'JSONL Observability'].map((tech) => (
+                  <span
+                    key={tech}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-50/50 dark:bg-indigo-950/30 text-indigo-600 dark:text-indigo-300 border border-indigo-100 dark:border-indigo-900/40 rounded-full text-xs font-semibold hover:bg-indigo-100/60 dark:hover:bg-indigo-900/20 hover:-translate-y-0.5 transition-all duration-300 shadow-sm cursor-default"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 dark:bg-indigo-400 animate-pulse" />
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

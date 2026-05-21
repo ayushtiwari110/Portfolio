@@ -28,7 +28,13 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="bg-white dark:bg-gray-900 min-h-screen font-sans">
+    <div className="bg-slate-50 dark:bg-gray-950 min-h-screen font-sans relative overflow-hidden transition-colors duration-500">
+      {/* Premium ambient light blurs in background */}
+      <div className="absolute top-[10%] left-[-15%] w-[600px] h-[600px] bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-[35%] right-[-15%] w-[600px] h-[600px] bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-[65%] left-[-15%] w-[600px] h-[600px] bg-sky-500/10 dark:bg-sky-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[5%] right-[-15%] w-[600px] h-[600px] bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-[140px] pointer-events-none" />
+
       <Navbar />
       <IntroSection />
       <TechStackSection />
@@ -41,14 +47,18 @@ export default function Portfolio() {
       <div>
         {/* footer with copyright text and cool tagline */}
 
-        <div className="flex items-center justify-center gap-8 mx-auto px-4 py-8 text-center text-gray-600 dark:text-gray-300">
-          <p className="text-sm">
-            &copy; 2024 Ayush Tiwari. All rights reserved.
-          </p>
-          <p className="text-sm">
-            Crafted with ❤️ by Ayush Tiwari
-          </p>
+        <div className="flex flex-col items-center gap-2 mx-auto px-4 py-8 text-center text-gray-600 dark:text-gray-300">
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <p className="text-sm">
+              &copy; 2026 Ayush Tiwari. All rights reserved.
+            </p>
+            <div className="flex items-center gap-3 text-sm">
+              <span>Last Updated: May 2026</span>
+              <span className="text-neutral-300 dark:text-neutral-800 font-light">|</span>
+              <span>Crafted with ❤️ by Ayush Tiwari</span>
+            </div>
           </div>
+        </div>
       </div>
       <motion.button
         initial={{ opacity: 0 }}
