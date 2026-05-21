@@ -38,8 +38,8 @@ const TldrModal = ({ isOpen, onClose }: TldrModalProps) => {
   // Enhanced data structure
   const personalInfo = {
     name: "Ayush Tiwari",
-    title: "Backend Engineering Intern @ Zenskar",
-    education: "B.Tech + M.Tech @ IIT Bhubaneswar",
+    title: "Upcoming SDE-1 @ Eternal",
+    education: "B.Tech + M.Tech @ IIT Bhubaneswar (Graduated May 2026)",
     cgpa: "8.5/10.0",
     location: "Bhubaneswar, India",
     experience: "12+ months",
@@ -166,6 +166,13 @@ const TldrModal = ({ isOpen, onClose }: TldrModalProps) => {
 
   // Experience data
   const experiences = [
+    {
+      company: "Eternal",
+      role: "Upcoming Software Development Engineer (SDE-1)",
+      period: "Day 0 Placement (Starting June 2026)",
+      type: "Upcoming",
+      highlights: ["Shortlisted in top 5% candidates", "Upcoming full-time SDE role"]
+    },
     {
       company: "Zenskar",
       role: "Backend Engineering Intern",

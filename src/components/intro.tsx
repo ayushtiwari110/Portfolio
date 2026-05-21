@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { staggerChildren, slideUp } from "@/utils/motion-utils";
-import { BackgroundLines } from "./ui/background-lines";
 import { useState, useEffect } from "react";
 import TldrModal from "./tldr-modal";
 import {
@@ -60,15 +59,15 @@ function AchievementsDynamicIsland() {
           <DynamicContainer className="flex flex-col items-center justify-center h-full w-full px-4 py-2">
             <div className="flex items-center gap-2 mb-1">
               <div className="relative">
-                <Rocket className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                <Rocket className="h-4 w-4 text-indigo-400 flex-shrink-0" />
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
               </div>
               <DynamicDescription className="text-sm font-medium text-neutral-100 dark:text-neutral-100">
-                Backend Engineering Intern @ Zenskar
+                Upcoming SDE-1 @ Eternal
               </DynamicDescription>
             </div>
             <div className="flex items-center gap-1">
-              <span className="text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-300 rounded-full">Current Role</span>
+              <span className="text-xs px-2 py-0.5 bg-indigo-500/20 text-indigo-300 rounded-full">Upcoming Role</span>
             </div>
           </DynamicContainer>
         );
@@ -197,19 +196,35 @@ function IntroSection() {
       animate="visible"
       variants={staggerChildren}
       id="intro"
-      className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-950 transition-colors duration-500"
+      className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-950 transition-colors duration-500 relative overflow-hidden"
     >
-      <BackgroundLines className="bg-white dark:bg-gray-900 flex items-center min-h-screen">
+      {/* Background glow blobbies specifically for intro */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="flex items-center min-h-screen w-full relative z-10">
         <div className="container mx-auto px-4 text-center mt-16">
 
-          <motion.div variants={slideUp} className="mb-8 relative w-48 h-48 mx-auto">
-            <Image
-              src="/ayush-avatar.jpg"
-              alt="Developer's profile picture"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-full border-4 border-primary mx-auto shadow-lg"
-            />
+          <motion.div 
+            variants={slideUp} 
+            className="mb-8 relative w-44 h-44 mx-auto group"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
+          >
+            {/* Rotating gradient background border */}
+            <div className="absolute inset-0 bg-gradient-to-r from-sky-400 via-indigo-500 to-purple-600 rounded-full animate-spin [animation-duration:8s] opacity-75 blur-[1px] group-hover:opacity-100 transition-opacity" />
+            
+            {/* Inner background container to isolate the image */}
+            <div className="absolute inset-[3px] bg-white dark:bg-gray-900 rounded-full p-[3px] flex items-center justify-center">
+              <div className="relative w-full h-full rounded-full overflow-hidden">
+                <Image
+                  src="/ayush-avatar.jpg"
+                  alt="Developer's profile picture"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-full transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </div>
           </motion.div>
           <motion.h1 variants={slideUp} className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-gray-100 ">
             Hello, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500">Ayush Tiwari</span>
@@ -222,7 +237,7 @@ function IntroSection() {
           </motion.div>
           <motion.p variants={slideUp} className="text-lg md:text-xl mb-5 max-w-2xl mx-auto text-gray-700 dark:text-gray-200">
             I aim to craft innovative projects at the intersection of
-            <span className="font-bold"> Generative AI</span>,
+            <span className="font-bold"> Agentic AI</span>,
             <span className="font-bold"> Machine Learning</span>, and
             <span className="font-bold"> Software Engineering</span>.
             I'm driven by the vision of transforming complex challenges into meaningful technology that impacts lives.
@@ -244,7 +259,7 @@ function IntroSection() {
           </motion.div>
 
         </div>
-      </BackgroundLines>
+      </div>
 
       {/* TL;DR Modal */}
       <TldrModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

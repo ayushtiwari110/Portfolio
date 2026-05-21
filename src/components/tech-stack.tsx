@@ -8,6 +8,13 @@ import { Card } from "@/components/ui/card"
 import { ReactIcon, NextJsIcon, NodeJsIcon, JavaScriptIcon, JavaIcon, TypeScriptIcon, MongoDBIcon, PrismaIcon, MySQLIcon, JestIcon, FigmaIcon, PythonIcon, CPlusPlusIcon, CircleCIIcon, ClaudeAIIcon, GraphQLIcon, AWSIcon, DockerIcon, GitIcon, CIcon, ExpressJsLightIcon, StorybookIcon, ReactQueryIcon, ReactRouterIcon, ReduxIcon, ESLintIcon, FirebaseIcon, PrettierIcon, PostmanIcon, TailwindCSSIcon, ShadcnUIIcon, SupabaseIcon, SwaggerIcon, VisualStudioCodeIcon, ZodIcon } from 'developer-icons'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 
+// Custom Cypress icon (not available in developer-icons)
+const CypressIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className={className} fill="currentColor">
+    <path d="M11.998.0195c-.8642 0-1.6816.1101-2.1445.1934v.002C4.1731 1.2283 0 6.1368 0 12.0018c0 1.1265.1573 2.2328.4648 3.3028.0387.1453.0915.2993.1368.4473 1.607 4.865 6.2245 8.226 11.3925 8.2285.0651 0 .2518-.0003.502-.0118.8564-.0353 1.6228-.5734 1.9512-1.369l.4736-1.1544L20.4258 8.043H18.621l-2.3164 5.871-2.334-5.871h-1.9082l3.2734 8.0117c-.8115 1.9702-1.6252 3.9395-2.4355 5.9101-.0808.1945-.2655.3284-.4727.336-.144.005-.285.0098-.4316.0098-4.5848 0-8.6672-3.0695-9.9277-7.4649a10.3058 10.3058 0 0 1-.3985-2.8437c0-5.0887 3.6521-9.3404 8.6035-10.164.2214-.037.8885-.1446 1.7246-.1446 4.4166 0 8.269 2.732 9.7305 6.8476.0558.144.0977.293.1465.4395.299.9746.4531 1.9887.4531 3.0215 0 4.5696-2.9413 8.5326-7.3164 9.8613l.4863 1.5c5.0137-1.5157 8.5821-6.1992 8.5821-11.3613 0-1.2539-.1856-2.5098-.5508-3.7168-.0449-.1484-.0976-.3106-.1504-.4629C21.5625 3.2813 17.0723.0195 11.998.0195zM8.8223 8.043H6.9102L4.5937 13.914l-2.334-5.871H.3516L3.625 16.055l-1.3437 3.3418h1.873z" />
+  </svg>
+)
+
 const categories = {
   all: "All",
   language: "Languages",
@@ -65,6 +72,7 @@ const techStack: TechItem[] = [
   { name: 'Loki', icon: CircleCIIcon, category: 'devops' },
   { name: 'Zipkin', icon: CircleCIIcon, category: 'devops' },
   { name: 'OpenTelemetry', icon: CircleCIIcon, category: 'devops' },
+  { name: 'Cypress', icon: CypressIcon as React.ElementType, category: 'tools' },
   { name: 'Jest', icon: JestIcon, category: 'tools' },
   { name: 'Zod', icon: ZodIcon, category: 'tools' },
   { name: 'StoryBook', icon: StorybookIcon, category: 'tools' },
@@ -173,6 +181,7 @@ const TechStackSection = () => {
     <section className="py-16 bg-background" id='tech-stack'>
       <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-8">
+          <span className="text-xs font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase block mb-2">[ 01 // SKILLS ]</span>
           <h2 className="text-4xl font-bold mb-3 text-gray-900 dark:text-white">
             My Tech Stack
           </h2>

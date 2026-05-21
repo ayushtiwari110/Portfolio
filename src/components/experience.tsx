@@ -48,15 +48,22 @@ function ExperienceSection() {
       viewport={{ once: true }}
       variants={staggerChildren}
       id="experience"
-      className="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-500"
+      className="py-24 bg-white dark:bg-gray-950 transition-colors duration-500 relative overflow-hidden"
     >
-      <div className="container mx-auto px-4">
-        <motion.h2 
-          variants={slideUp} 
-          className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white"
-        >
-          Experience
-        </motion.h2>
+      {/* Ambient background glow blurs */}
+      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-sky-500/10 dark:bg-sky-500/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <span className="text-xs font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase block mb-2">[ 04 // EXPERIENCE ]</span>
+          <motion.h2 
+            variants={slideUp} 
+            className="text-4xl font-bold text-gray-900 dark:text-white"
+          >
+            Experience
+          </motion.h2>
+        </div>
         <motion.div variants={staggerChildren} className="max-w-4xl mx-auto">
           {experiences.map((exp, index) => (
             <motion.div 
@@ -65,16 +72,16 @@ function ExperienceSection() {
               className="mb-12 flex group"
             >
               <div className="flex flex-col items-center mr-8">
-                <div className="w-3 h-3 bg-indigo-500 rounded-full ring-4 ring-indigo-50 dark:ring-gray-700 transition-all duration-300 group-hover:ring-8"></div>
-                <div className="w-0.5 h-full bg-indigo-200 dark:bg-gray-700"></div>
+                <div className="w-3 h-3 bg-indigo-500 rounded-full ring-4 ring-indigo-100/50 dark:ring-indigo-950/50 transition-all duration-300 group-hover:ring-8"></div>
+                <div className="w-0.5 h-full bg-indigo-100 dark:bg-indigo-950/50"></div>
               </div>
-              <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 flex-grow border border-gray-100 dark:border-gray-700">
+              <div className="bg-white/40 dark:bg-gray-950/40 backdrop-blur-md p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex-grow border border-neutral-200/50 dark:border-neutral-800/50 hover:border-indigo-500/30 hover:shadow-[0_0_20px_rgba(99,102,241,0.08)]">
                 <div className="flex justify-between items-start mb-4 flex-wrap gap-2">
                   <div className="flex items-center gap-3">
                     <img
                       src={exp.logo}
                       alt={`${exp.company} logo`}
-                      className="w-8 h-8 rounded-full object-cover bg-gray-100 dark:bg-gray-700"
+                      className="w-8 h-8 rounded-full object-cover bg-gray-100 dark:bg-gray-750"
                     />
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                       {exp.company}
@@ -89,7 +96,7 @@ function ExperienceSection() {
                       <Linkedin size={20} />
                     </a>
                   </div>
-                  <span className="text-sm font-medium px-3 py-1 bg-indigo-50 dark:bg-gray-700 text-indigo-600 dark:text-indigo-300 rounded-full">
+                  <span className="text-xs font-semibold px-3 py-1 bg-indigo-50/60 dark:bg-indigo-950/30 text-indigo-600 dark:text-indigo-300 border border-indigo-100/50 dark:border-indigo-900/30 rounded-full">
                     {exp.period}
                   </span>
                 </div>

@@ -73,10 +73,14 @@ function ContactSection() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="py-24 bg-gradient-to-br from-gray-50 via-indigo-50/30 to-gray-50 dark:from-gray-900 dark:via-indigo-900/10 dark:to-gray-900"
+      className="py-24 bg-white dark:bg-gray-950 transition-colors duration-500 relative overflow-hidden"
       id="contact"
     >
-      <div className="container mx-auto px-4">
+      {/* Ambient background blurs */}
+      <div className="absolute top-1/4 right-1/3 w-96 h-96 bg-sky-500/10 dark:bg-sky-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -84,6 +88,7 @@ function ContactSection() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
+            <span className="text-xs font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase block mb-2">[ 07 // CONNECTION ]</span>
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
               Get in Touch
             </h2>
@@ -97,7 +102,7 @@ function ContactSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-8 border border-gray-100 dark:border-gray-700"
+            className="bg-white/40 dark:bg-gray-950/40 backdrop-blur-md rounded-xl shadow-sm hover:shadow-xl p-8 border border-neutral-200/50 dark:border-neutral-800/50 hover:border-indigo-500/30 transition-all duration-300"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
