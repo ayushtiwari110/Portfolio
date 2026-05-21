@@ -10,7 +10,7 @@ import {
   DynamicDescription,
   useDynamicIslandSize
 } from "./ui/dynamic-island";
-import { Code, Star, Target, Rocket, Award, TrendingUp, Brain } from "lucide-react";
+import { Code, Star, Rocket, Award, TrendingUp, Brain } from "lucide-react";
 
 function AchievementsDynamicIsland() {
   const { setSize } = useDynamicIslandSize();
@@ -24,8 +24,7 @@ function AchievementsDynamicIsland() {
       "compact",              // Key Achievement  
       "compactLong",          // Tech Skills
       "compactMedium",        // Competition Stats
-      "compact",              // Research Impact
-      "compactLong"           // Available Status
+      "compact"               // Research Impact
     ] as const;
 
     const interval = setInterval(() => {
@@ -45,8 +44,7 @@ function AchievementsDynamicIsland() {
       "compact",              // Key Achievement  
       "compactLong",          // Tech Skills
       "compactMedium",        // Competition Stats
-      "compact",              // Research Impact
-      "compactLong"           // Available Status
+      "compact"               // Research Impact
     ] as const;
 
     setSize(cycle[currentCycleIndex]);
@@ -122,20 +120,6 @@ function AchievementsDynamicIsland() {
               <DynamicDescription className="text-sm font-medium text-neutral-100 dark:text-neutral-100 truncate">
                 <span className="text-indigo-300">7+ Projects</span> • ML Research
               </DynamicDescription>
-            </div>
-          </DynamicContainer>
-        );
-
-      case 5: // compactLong - Available Status
-        return (
-          <DynamicContainer className="flex items-center justify-center h-full w-full px-4">
-            <div className="flex items-center gap-3">
-              <Target className="h-4 w-4 text-cyan-400 flex-shrink-0" />
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-neutral-100">Open for</span>
-                <span className="text-xs px-2 py-0.5 bg-cyan-500/20 text-cyan-300 rounded-full">SDE Roles</span>
-                <span className="text-xs px-2 py-0.5 bg-pink-500/20 text-pink-300 rounded-full">May 2026</span>
-              </div>
             </div>
           </DynamicContainer>
         );
